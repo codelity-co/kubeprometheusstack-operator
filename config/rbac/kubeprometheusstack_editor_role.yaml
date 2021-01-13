@@ -1,0 +1,24 @@
+# permissions for end users to edit kubeprometheusstacks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kubeprometheusstack-editor-role
+rules:
+- apiGroups:
+  - codelity.co
+  resources:
+  - kubeprometheusstacks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - codelity.co
+  resources:
+  - kubeprometheusstacks/status
+  verbs:
+  - get
